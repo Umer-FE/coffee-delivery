@@ -1,0 +1,38 @@
+.title {
+  color: #c47f17;
+  font-family: "Baloo 2", cursive;
+  font-weight: 800;
+}
+.subtitle {
+  color: #403937;
+  font-size: 1.25rem;
+}
+
+.infoBox {
+  padding: 40px;
+  border-radius: 6px 36px;
+  background: white;
+  position: relative;
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(white, white),
+    linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

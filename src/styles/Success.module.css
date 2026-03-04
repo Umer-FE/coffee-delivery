@@ -1,0 +1,57 @@
+.container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.title {
+  font-family: "Baloo 2", cursive;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #c47f17; /* Yellowish Brown */
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #403937;
+}
+
+/* Gradient Border Box */
+.orderInfo {
+  padding: 40px;
+  border-radius: 6px 36px;
+  position: relative;
+  background: #fff;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  /* Ye trick gradient border banati hai */
+  border-image: linear-gradient(102.89deg, #dbac2c 2.61%, #8047f8 98.76%) 1;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.infoItem:last-child {
+  margin-bottom: 0;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 492px;
+}

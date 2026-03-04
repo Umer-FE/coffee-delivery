@@ -1,0 +1,126 @@
+.checkoutContainer {
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+.sectionTitle {
+  font-family: "Baloo 2", cursive;
+  margin-bottom: 15px;
+}
+
+.formCard {
+  background: #f3f2f2;
+  padding: 40px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.cardHeader {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+.cardHeader p {
+  color: #403937;
+}
+.cardHeader small {
+  color: #574f4d;
+}
+
+.addressInputs input {
+  background: #ededed;
+  border: 1px solid #e6e5e5;
+  height: 42px;
+  font-size: 14px;
+}
+
+.paymentOptions {
+  display: flex;
+  gap: 12px;
+}
+.payBtn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: #e6e5e5;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.payBtn:hover {
+  background: #d7d5d5;
+  border: 1px solid #8047f8;
+}
+
+.summaryCard {
+  background: #f3f2f2;
+  padding: 40px;
+  border-radius: 6px 44px;
+}
+.cartItem {
+  display: flex;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e6e5e5;
+  margin-bottom: 24px;
+}
+.cartItem img {
+  width: 64px;
+  height: 64px;
+}
+.itemInfo {
+  flex: 1;
+}
+.itemActions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.quantity {
+  background: #e6e5e5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+}
+.quantity button {
+  border: none;
+  background: none;
+  color: #8047f8;
+  cursor: pointer;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #e6e5e5;
+  border: none;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.totals {
+  margin: 24px 0;
+}
+.confirmBtn {
+  width: 100%;
+  padding: 12px;
+  background: #dbac2c;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: bold;
+}
+.confirmBtn:hover {
+  background: #c47f17;
+}
+.activePayment {
+  background: #ebe5f9 !important;
+  border: 1px solid #8047f8 !important;
+}

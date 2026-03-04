@@ -1,66 +1,83 @@
-import Image from "next/image";
+import { coffees } from "../data/coffees";
+import CoffeeCard from "../components/CoffeeCard/CoffeeCard";
+import { FaShoppingCart, FaBox, FaClock, FaCoffee } from "react-icons/fa";
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="">
+      <section className="hero_sec">
+        <div className="container">
+          <div className="row align-items-center py-5w">
+            <div className="col-md-7">
+              <h1 style={{ fontSize: "3rem", fontWeight: 800 }}>
+                Find the perfect coffee for any time of day.
+              </h1>
+              <p className="fs-5 text-muted">
+                With Coffee Delivery, you receive your coffee wherever you are,
+                at any time.
+              </p>
+              <div className="row g-4 mt-4">
+                <div className="col-md-6 d-flex align-items-center gap-2 icon_group">
+                  <div
+                    className="iconWrapper"
+                    style={{ backgroundColor: "#C47F17" }}
+                  >
+                    <FaShoppingCart color="white" size={14} />
+                  </div>
+                  <span>Simple and secure shopping</span>
+                </div>
+                <div className="col-md-6 d-flex align-items-center gap-2">
+                  <div
+                    className="iconWrapper"
+                    style={{ backgroundColor: "#574F4D" }}
+                  >
+                    <FaBox color="white" size={14} />
+                  </div>
+                  <span>Packaging keeps coffee intact</span>
+                </div>
+                <div className="col-md-6 d-flex align-items-center gap-2">
+                  <div
+                    className="iconWrapper"
+                    style={{ backgroundColor: "#DBAC2C" }}
+                  >
+                    <FaClock color="white" size={14} />
+                  </div>
+                  <span>Fast and tracked delivery</span>
+                </div>
+                <div className="col-md-6 d-flex align-items-center gap-2">
+                  <div
+                    className="iconWrapper"
+                    style={{ backgroundColor: "#8047F8" }}
+                  >
+                    <FaCoffee color="white" size={14} />
+                  </div>
+                  <span>The coffee arrives fresh to you</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-5">
+              <img src="/images/coffee.png" alt="Hero" className="img-fluid" />
+            </div>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      <section className="py-5">
+        <div className="container">
+          <h2 className="mb-5">Our coffees</h2>
+          <div className="row g-5">
+            {coffees.map((coffee) => (
+              <div
+                key={coffee.id}
+                className="col-12 col-sm-6 col-md-4 col-lg-3"
+              >
+                <CoffeeCard coffee={coffee} />
+              </div>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }
