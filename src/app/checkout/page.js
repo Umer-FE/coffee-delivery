@@ -154,7 +154,7 @@ export default function Checkout() {
                   name="uf"
                   className="form-control"
                   placeholder="State"
-                  maxLength="2"
+                  maxLength="3"
                 />
               </div>
             </div>
