@@ -8,7 +8,7 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [isMounted, setIsMounted] = useState(false); // Hydration mismatch fix
+  const [isMounted, setIsMounted] = useState(false);
 
   const cartItems = useSelector((state) => state.cart.items);
 
@@ -18,10 +18,8 @@ export default function Header() {
   );
 
   useEffect(() => {
-    // 1. Component mount ho gaya (Client side ready)
     setIsMounted(true);
 
-    // 2. Scroll detection logic
     const handleScroll = () => {
       if (window.scrollY > 20) {
         setScrolled(true);
@@ -56,10 +54,6 @@ export default function Header() {
             <Link href="/checkout">
               <button className={styles.cartButton}>
                 <FaShoppingCart size={20} color="#C47F17" />
-
-                {/* IMPORTANT: yahan isMounted check hydration error fix karega. 
-                  Badge sirf tabhi render hoga jab client-side ready ho.
-                */}
                 {isMounted && totalQuantity > 0 ? (
                   <span className={styles.badge}>{totalQuantity}</span>
                 ) : null}
