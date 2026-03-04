@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { FaMapMarkerAlt, FaShoppingCart } from "react-icons/fa";
 import styles from "./Header.module.css";
+const mapsUrl = "https://www.google.com/maps/place/Porto+Alegre,+RS,+Brazil";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -43,14 +44,20 @@ export default function Header() {
           </Link>
 
           <div className={styles.navActions}>
-            <div className={styles.locationBadge}>
-              <FaMapMarkerAlt
-                size={18}
-                style={{ marginRight: "4px", color: "#8047F8" }}
-              />
-              Porto Alegre, RS
-            </div>
-
+            <a
+              href={mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.locationLink}
+            >
+              <div className={styles.locationBadge}>
+                <FaMapMarkerAlt
+                  size={18}
+                  style={{ marginRight: "4px", color: "#8047F8" }}
+                />
+                Porto Alegre, RS
+              </div>
+            </a>
             <Link href="/checkout">
               <button className={styles.cartButton}>
                 <FaShoppingCart size={20} color="#C47F17" />

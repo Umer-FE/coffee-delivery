@@ -124,3 +124,12 @@
   align-items: center;
   justify-content: center;
 }
+.locationLink {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.locationBadge:hover {
+  opacity: 0.8;
+}
