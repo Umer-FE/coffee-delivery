@@ -76,7 +76,7 @@ export default function Checkout() {
   if (!isMounted) return null;
 
   return (
-    <div className={`container ${styles.checkoutContainer}`}>
+    <div className={`container pt-4 ${styles.checkoutContainer}`}>
       <form
         id="addressForm"
         onSubmit={handleConfirmOrder}
