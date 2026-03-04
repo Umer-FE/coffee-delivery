@@ -6,6 +6,9 @@ import Header from "../components/Header/Header";
 export const metadata = {
   title: "Coffee Delivery",
   description: "The perfect coffee for any time of day",
+  icons: {
+    icon: "/images/fav-icon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {
