@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Helper function: LocalStorage se data nikalne ke liye
 const loadFromStorage = (key, defaultValue) => {
   if (typeof window !== "undefined") {
     const saved = localStorage.getItem(key);
@@ -10,9 +9,7 @@ const loadFromStorage = (key, defaultValue) => {
 };
 
 const initialState = {
-  // Cart items load karein
   items: loadFromStorage("@coffee-delivery:cart-1.0.0", []),
-  // Order info load karein taake success page refresh par error na aaye
   orderInfo: loadFromStorage("@coffee-delivery:order-1.0.0", null),
 };
 
@@ -58,7 +55,6 @@ export const cartSlice = createSlice({
 
     confirmOrder: (state, action) => {
       state.orderInfo = action.payload;
-      // Refresh fix: Order details ko storage mein save karein
       localStorage.setItem(
         "@coffee-delivery:order-1.0.0",
         JSON.stringify(action.payload),
@@ -68,7 +64,6 @@ export const cartSlice = createSlice({
     clearCart: (state) => {
       state.items = [];
       localStorage.removeItem("@coffee-delivery:cart-1.0.0");
-      // Note: orderInfo ko yahan remove nahi karna taake success page par data dikhta rahe
     },
   },
 });
