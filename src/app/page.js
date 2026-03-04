@@ -1,7 +1,6 @@
 import { coffees } from "../data/coffees";
 import CoffeeCard from "../components/CoffeeCard/CoffeeCard";
 import { FaShoppingCart, FaBox, FaClock, FaCoffee } from "react-icons/fa";
-import styles from "./page.module.css";
 
 export default function Home() {
   return (

@@ -28,7 +28,6 @@ export default function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [isMounted, setIsMounted] = useState(false);
 
-  // Hydration fix: Ensure component is client-side before rendering cart data
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -55,8 +54,10 @@ export default function Checkout() {
 
     const formData = new FormData(e.target);
     const orderData = {
+      zip: formData.get("zip"),
       street: formData.get("street"),
       number: formData.get("number"),
+      addon: formData.get("addon"),
       city: formData.get("city"),
       uf: formData.get("uf"),
       paymentMethod:
@@ -72,7 +73,6 @@ export default function Checkout() {
     router.push("/success");
   };
 
-  // Prevent hydration error during server rendering
   if (!isMounted) return null;
 
   return (
@@ -82,19 +82,23 @@ export default function Checkout() {
         onSubmit={handleConfirmOrder}
         className="row mt-5 pt-5"
       >
-        {/* Left Side: Address and Payment */}
         <div className="col-lg-7">
           <h5 className={styles.sectionTitle}>Complete your order</h5>
 
+          {/* ADDRESS SECTION */}
           <div className={styles.formCard}>
             <div className={styles.cardHeader}>
               <FaMapMarkerAlt color="#C47F17" size={20} />
               <div>
                 <p className="mb-0">Delivery Address</p>
+                <small>
+                  Enter the address where you want to receive your order
+                </small>
               </div>
             </div>
+
             <div className="row g-3">
-              <div className="col-4">
+              <div className="col-md-4">
                 <input
                   required
                   name="zip"
@@ -110,7 +114,7 @@ export default function Checkout() {
                   placeholder="Street"
                 />
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <input
                   required
                   name="number"
@@ -118,14 +122,25 @@ export default function Checkout() {
                   placeholder="Number"
                 />
               </div>
-              <div className="col-8">
+              <div className="col-md-8">
+                <div className="position-relative">
+                  <input
+                    name="addon"
+                    className="form-control"
+                    placeholder="Add-on"
+                  />
+                  <span className={styles.optionalTag}>Optional</span>
+                </div>
+              </div>
+              <div className="col-md-4">
                 <input
-                  name="addon"
+                  required
+                  name="city"
                   className="form-control"
-                  placeholder="Add-on"
+                  placeholder="Neighborhood"
                 />
               </div>
-              <div className="col-6">
+              <div className="col-md-6">
                 <input
                   required
                   name="city"
@@ -133,12 +148,13 @@ export default function Checkout() {
                   placeholder="City"
                 />
               </div>
-              <div className="col-2">
+              <div className="col-md-2">
                 <input
                   required
                   name="uf"
                   className="form-control"
                   placeholder="State"
+                  maxLength="2"
                 />
               </div>
             </div>
@@ -180,7 +196,7 @@ export default function Checkout() {
           </div>
         </div>
 
-        {/* Right Side: Summary */}
+        {/* Right Side: Summary (Selected Coffees) */}
         <div className="col-lg-5">
           <h5 className={styles.sectionTitle}>Selected coffees</h5>
           <div className={styles.summaryCard}>
