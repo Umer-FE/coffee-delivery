@@ -97,3 +97,6 @@ section.hero_sec {
   box-shadow: none;
   border-color: var(--base-input);
 }
+a {
+  text-decoration: none;
+}

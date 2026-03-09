@@ -6,14 +6,18 @@ import { addToCart } from "../../redux/cartSlice";
 import { FaPlus, FaMinus, FaShoppingCart } from "react-icons/fa";
 import Swal from "sweetalert2";
 import styles from "./CoffeeCard.module.css";
+// 1. Link Import Karein
+import Link from "next/link";
 
 export default function CoffeeCard({ coffee }) {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
-  // const formattedPrice = coffee.price.toFixed(2).replace(".", ",");
+  const handleAdd = (e) => {
+    // 2. Propagation aur default behavior rokein
+    e.preventDefault();
+    e.stopPropagation();
 
-  const handleAdd = () => {
     dispatch(addToCart({ ...coffee, quantity }));
 
     Swal.fire({
@@ -32,17 +36,25 @@ export default function CoffeeCard({ coffee }) {
 
   return (
     <div className={styles.card}>
-      <img src={coffee.image} alt={coffee.name} className={styles.coffeeImg} />
+      {/* 3. Image aur Title ko Link mein wrap karein */}
+      <Link href={`/product/${coffee.id}`} className={styles.detailLink}>
+        <img
+          src={coffee.image}
+          alt={coffee.name}
+          className={styles.coffeeImg}
+        />
 
-      <div className={styles.coffeeTags}>
-        {coffee.tags &&
-          coffee.tags.map((tag, index) => (
-            <span key={index} className={styles.tag}>
-              {tag.toUpperCase()}
-            </span>
-          ))}
-      </div>
-      <h3 className={styles.title}>{coffee.name}</h3>
+        <div className={styles.coffeeTags}>
+          {coffee.tags &&
+            coffee.tags.map((tag, index) => (
+              <span key={index} className={styles.tag}>
+                {tag.toUpperCase()}
+              </span>
+            ))}
+        </div>
+        <h3 className={styles.title}>{coffee.name}</h3>
+      </Link>
+
       <p className={styles.description}>{coffee.description}</p>
 
       <div className={styles.footer}>
@@ -55,7 +67,12 @@ export default function CoffeeCard({ coffee }) {
           <div className={styles.quantitySelector}>
             <button
               className="btn btn-sm"
-              onClick={() => setQuantity((q) => Math.max(1, q - 1))}
+              // 4. Buttons par stopPropagation zaroori hai
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setQuantity((q) => Math.max(1, q - 1));
+              }}
               style={{ color: "#8047F8", border: "none", background: "none" }}
             >
               <FaMinus size={12} />
@@ -63,7 +80,11 @@ export default function CoffeeCard({ coffee }) {
             <span className="mx-2">{quantity}</span>
             <button
               className="btn btn-sm"
-              onClick={() => setQuantity((q) => q + 1)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setQuantity((q) => q + 1);
+              }}
               style={{ color: "#8047F8", border: "none", background: "none" }}
             >
               <FaPlus size={12} />
