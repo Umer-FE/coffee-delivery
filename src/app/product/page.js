@@ -70,7 +70,7 @@ export default function AllProducts() {
       {/* Products Grid */}
       <div className="row g-5 mt-2">
         {filteredProducts.map((coffee) => (
-          <div key={coffee.id} className="col-12 col-sm-6 col-md-4 col-lg-3">
+          <div key={coffee.id} className="col-md-6 col-lg-4 col-xl-3">
             <CoffeeCard coffee={coffee} />
           </div>
         ))}
