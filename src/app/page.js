@@ -7,10 +7,9 @@ import {
   FaCoffee,
   FaArrowRight,
 } from "react-icons/fa";
-import Link from "next/link"; // Next.js Link import kiya
+import Link from "next/link";
 
 export default function Home() {
-  // Home page par sirf pehle 4 ya 8 products dikhana behtar hai
   const featuredCoffees = coffees.slice(0, 8);
 
   return (
@@ -66,7 +65,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Hero Section mein bhi Link add kar sakte hain */}
               <div className="mt-5">
                 <Link
                   href="/product"
@@ -92,7 +90,6 @@ export default function Home() {
 
       <section className="py-5">
         <div className="container">
-          {/* Header with Link to All Products */}
           <div className="d-flex justify-content-between align-items-center mb-5">
             <h2
               className="mb-0"

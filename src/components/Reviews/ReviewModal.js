@@ -20,9 +20,7 @@ export default function ReviewModal({
           <FaTimes />
         </button>
         <h3 className="text-center mb-4">Write your Review</h3>
-
         <form onSubmit={onSubmit}>
-          {/* Star Rating Selection */}
           <div className="text-center mb-4">
             <p className="mb-2 small text-muted text-uppercase fw-bold">
               Your Rating

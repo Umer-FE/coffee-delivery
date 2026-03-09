@@ -123,7 +123,6 @@ a {
   transition: color 0.2s ease;
 }
 
-/* Animation Utilities */
 .fade-in {
   animation: fadeIn 0.5s ease-in;
 }
