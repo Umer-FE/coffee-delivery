@@ -112,6 +112,8 @@ export default function ProductDetail() {
         </div>
 
         <div className="col-md-6 ps-md-4">
+          <h1 className={styles.product_title}>{product.name}</h1>
+          <p className="text-muted fs-5 mb-4">{product.description}</p>
           <div className="mb-2">
             {product.tags?.map((tag, index) => (
               <span key={index} className={styles.tag_badge}>
@@ -119,9 +121,6 @@ export default function ProductDetail() {
               </span>
             ))}
           </div>
-          <h1 className={styles.product_title}>{product.name}</h1>
-          <p className="text-muted fs-5 mb-4">{product.description}</p>
-
           <div className="d-flex align-items-center gap-4 flex-wrap mt-4">
             <h2 className="mb-0 fw-bold" style={{ color: "#403937" }}>
               Rs {product.price.toFixed(2)}
