@@ -6,7 +6,7 @@
   --text-main: #403937;
   --text-support: #574f4d;
   --bg-light: #f3f2f2;
-  --transition: all 0.3s ease;
+  --transition: all ease 0.3s;
 }
 
 /* --- Base Containers --- */
@@ -28,17 +28,20 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
 }
 
 .product_detail_image img {
   max-width: 350px;
   width: 100%;
   filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.15));
-  transition: var(--transition);
+  /* transition: var(--transition); */
+  transition: all ease 0.2s;
 }
 
 .product_detail_image:hover img {
   transform: scale(1.05);
+  transition: all ease 0.2s;
 }
 
 /* --- Typography & Badges --- */
