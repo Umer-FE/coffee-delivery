@@ -34,7 +34,7 @@ export default function AllProducts() {
 
       <div className="row mb-5 align-items-center g-5">
         {/* Search Bar */}
-        <div className="col-lg-4 col-md-6">
+        <div className="col-lg-4 col-md-12">
           <div className={styles.search_wrapper}>
             <FaSearch className={styles.search_icon} />
             <input
@@ -48,7 +48,7 @@ export default function AllProducts() {
         </div>
 
         {/* Filter Buttons */}
-        <div className="col-lg-8 col-md-6">
+        <div className="col-lg-8 col-md-12">
           <div className={styles.filter_group}>
             {categories.map((cat) => (
               <button
