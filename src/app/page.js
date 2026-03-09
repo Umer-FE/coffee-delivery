@@ -9,7 +9,7 @@ export default function Home() {
         <div className="container">
           <div className="row align-items-center py-5w">
             <div className="col-md-7">
-              <h1 style={{ fontSize: "3rem", fontWeight: 800 }}>
+              <h1 style={{ fontSize: "48px", fontWeight: 800 }}>
                 Find the perfect coffee for any time of day.
               </h1>
               <p className="fs-5 text-muted">
@@ -67,10 +67,7 @@ export default function Home() {
           <h2 className="mb-5">Our coffees</h2>
           <div className="row g-5">
             {coffees.map((coffee) => (
-              <div
-                key={coffee.id}
-                className="col-12 col-sm-6 col-md-4 col-lg-3"
-              >
+              <div key={coffee.id} className="col-md-6 col-lg-4 col-xl-3">
                 <CoffeeCard coffee={coffee} />
               </div>
             ))}

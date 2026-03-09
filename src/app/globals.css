@@ -71,9 +71,11 @@ section.hero_sec {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 650px;
+  /* height: 650px; */
   display: flex;
   align-items: center;
+  margin: 61px 0 0px 0;
+  padding: 50px 10px 50px 10px;
 }
 
 .iconWrapper {

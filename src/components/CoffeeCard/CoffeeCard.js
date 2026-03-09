@@ -11,7 +11,7 @@ export default function CoffeeCard({ coffee }) {
   const [quantity, setQuantity] = useState(1);
   const dispatch = useDispatch();
 
-  const formattedPrice = coffee.price.toFixed(2).replace(".", ",");
+  // const formattedPrice = coffee.price.toFixed(2).replace(".", ",");
 
   const handleAdd = () => {
     dispatch(addToCart({ ...coffee, quantity }));
@@ -47,8 +47,8 @@ export default function CoffeeCard({ coffee }) {
 
       <div className={styles.footer}>
         <div className={styles.price}>
-          <span style={{ fontSize: "0.875rem", fontWeight: 400 }}>R$</span>{" "}
-          <strong>{formattedPrice}</strong>
+          <span style={{ fontSize: "0.875rem", fontWeight: 400 }}>Rs</span>{" "}
+          <strong>{coffee.price}</strong>
         </div>
 
         <div className={styles.actions}>

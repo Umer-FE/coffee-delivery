@@ -36,9 +36,9 @@ export default function Checkout() {
     (acc, item) => acc + item.price * item.quantity,
     0,
   );
-  const deliveryFee = 3.5;
+  const deliveryFee = 150;
   const grandTotal = totalItemsPrice + deliveryFee;
-  const formatMoney = (v) => v.toFixed(2).replace(".", ",");
+  // const formatMoney = (v) => v.toFixed(2).replace(".", ",");
 
   const handleConfirmOrder = async (e) => {
     e.preventDefault();
@@ -65,7 +65,7 @@ export default function Checkout() {
           ? "Credit Card"
           : paymentMethod === "debit"
             ? "Debit Card"
-            : "Money",
+            : "Cash on Delivery",
     };
 
     dispatch(confirmOrder(orderData));
@@ -80,7 +80,7 @@ export default function Checkout() {
       <form
         id="addressForm"
         onSubmit={handleConfirmOrder}
-        className="row mt-5 pt-5"
+        className="row  pt-5"
       >
         <div className="col-lg-7">
           <h5 className={styles.sectionTitle}>Complete your order</h5>
@@ -190,7 +190,7 @@ export default function Checkout() {
                 className={`${styles.payBtn} ${paymentMethod === "cash" ? styles.activePayment : ""}`}
                 onClick={() => setPaymentMethod("cash")}
               >
-                <FaRegMoneyBillAlt color="#8047F8" /> MONEY
+                <FaRegMoneyBillAlt color="#8047F8" /> Cash on Delivery
               </button>
             </div>
           </div>
@@ -213,9 +213,7 @@ export default function Checkout() {
                   <div className={styles.itemInfo}>
                     <div className="d-flex justify-content-between">
                       <p className="mb-1">{item.name}</p>
-                      <strong>
-                        R$ {formatMoney(item.price * item.quantity)}
-                      </strong>
+                      <strong>Rs {item.price * item.quantity}</strong>
                     </div>
                     <div className={styles.itemActions}>
                       <div className={styles.quantity}>
@@ -257,15 +255,15 @@ export default function Checkout() {
             <div className={styles.totals}>
               <div className="d-flex justify-content-between mb-2">
                 <span>Total items</span>
-                <span>R$ {formatMoney(totalItemsPrice)}</span>
+                <span>Rs {totalItemsPrice}</span>
               </div>
               <div className="d-flex justify-content-between mb-2">
                 <span>Delivery</span>
-                <span>R$ {formatMoney(deliveryFee)}</span>
+                <span>Rs {deliveryFee}</span>
               </div>
               <div className="d-flex justify-content-between fw-bold fs-5 pt-2">
                 <span>Total</span>
-                <span>R$ {formatMoney(grandTotal)}</span>
+                <span>Rs {grandTotal}</span>
               </div>
             </div>
 
