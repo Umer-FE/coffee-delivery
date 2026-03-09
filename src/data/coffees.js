@@ -66,7 +66,7 @@ export const coffees = [
     name: "Iced Espresso",
     description: "Drink prepared with espresso and ice cubes",
     price: 700,
-    tags: ["TRADITIONAL", "ICE CREAM"],
+    tags: ["TRADITIONAL", "ICED"],
     image: "/images/coffee-4.png",
     details: {
       intensity: 85,
@@ -89,7 +89,7 @@ export const coffees = [
     name: "Coffee with Milk",
     description: "Half traditional espresso, half steamed milk",
     price: 650,
-    tags: ["TRADICIONAL", "with milk"],
+    tags: ["TRADITIONAL", "WITH MILK"],
     image: "/images/coffee-5.png",
     details: {
       intensity: 50,
@@ -105,7 +105,7 @@ export const coffees = [
     name: "Latte",
     description: "An espresso shot with double milk and creamy foam",
     price: 750,
-    tags: ["TRADICIONAL", "with milk"],
+    tags: ["TRADITIONAL", "WITH MILK"],
     image: "/images/coffee-6.png",
     details: {
       intensity: 40,
@@ -129,7 +129,7 @@ export const coffees = [
     description:
       "Beverage with cinnamon made of equal doses of coffee, milk and foam",
     price: 650,
-    tags: ["TRADICIONAL", "with milk"],
+    tags: ["TRADITIONAL", "WITH MILK"],
     image: "/images/coffee-7.png",
     details: {
       intensity: 65,
@@ -145,7 +145,7 @@ export const coffees = [
     name: "Macchiato",
     description: "Espresso mixed with a little hot milk and foam",
     price: 650,
-    tags: ["TRADICIONAL", "with milk"],
+    tags: ["TRADITIONAL", "WITH MILK"],
     image: "/images/coffee-8.png",
     details: {
       intensity: 88,
@@ -161,7 +161,7 @@ export const coffees = [
     name: "Mocaccino",
     description: "Espresso with chocolate syrup, a little milk, and foam",
     price: 700,
-    tags: ["TRADICIONAL", "with milk"],
+    tags: ["TRADITIONAL", "WITH MILK"],
     image: "/images/coffee-9.png",
     details: {
       intensity: 70,
@@ -177,7 +177,7 @@ export const coffees = [
     name: "Hot Chocolate",
     description: "Drink made with chocolate dissolved in hot milk and coffee",
     price: 900,
-    tags: ["special", "with milk"],
+    tags: ["SPECIAL", "WITH MILK"],
     image: "/images/coffee-10.png",
     details: {
       intensity: 30,
@@ -193,7 +193,7 @@ export const coffees = [
     name: "Cuban",
     description: "Iced espresso drink with rum, cream, and mint",
     price: 550,
-    tags: ["special", "alcoholic", "ice cream"],
+    tags: ["SPECIAL", "ALCOHOLIC", "ICED"],
     image: "/images/coffee-11.png",
     details: {
       intensity: 80,
@@ -209,7 +209,7 @@ export const coffees = [
     name: "Hawaiian",
     description: "Sweet drink made with coffee and coconut milk",
     price: 700,
-    tags: ["special"],
+    tags: ["SPECIAL"],
     image: "/images/coffee-12.png",
     details: {
       intensity: 55,
@@ -225,7 +225,7 @@ export const coffees = [
     name: "Arabic",
     description: "Beverage prepared with Arabica coffee beans and spices",
     price: 600,
-    tags: ["special"],
+    tags: ["SPECIAL"],
     image: "/images/coffee-13.png",
     details: {
       intensity: 95,
@@ -242,7 +242,7 @@ export const coffees = [
     description:
       "A drink made with coffee, Irish whiskey, sugar, and whipped cream",
     price: 800,
-    tags: ["especiall", "alcoholic"],
+    tags: ["SPECIAL", "ALCOHOLIC"],
     image: "/images/coffee-10.png",
     details: {
       intensity: 75,
