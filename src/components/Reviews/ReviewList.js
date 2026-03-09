@@ -36,7 +36,7 @@ export default function ReviewList({ reviews }) {
           640: { slidesPerView: 2 },
           1024: { slidesPerView: 4 },
         }}
-        className="pb-5"
+        className="pb-5 pt-2"
       >
         {reviews.map((rev) => (
           <SwiperSlide key={rev.id}>

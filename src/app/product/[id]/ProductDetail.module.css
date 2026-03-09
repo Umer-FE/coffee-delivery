@@ -1,3 +1,14 @@
+/* --- Global Variables for this Module --- */
+.tab_content_container {
+  --purple: #8047f8;
+  --purple-dark: #4b2995;
+  --yellow: #dbac2c;
+  --text-main: #403937;
+  --text-support: #574f4d;
+  --bg-light: #f3f2f2;
+  --transition: all 0.3s ease;
+}
+
 /* --- Base Containers --- */
 .tab_content_container {
   background: #fafafa;
@@ -8,9 +19,9 @@
   border: 1px solid #f0f0f0;
 }
 
-/* --- Product Header Section --- */
+/* --- Product Image Section --- */
 .product_detail_image {
-  background-color: #f3f2f2;
+  background-color: var(--bg-light);
   padding: 40px;
   border-radius: 6px 36px;
   display: flex;
@@ -23,11 +34,19 @@
   max-width: 350px;
   width: 100%;
   filter: drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.15));
-  transition: transform 0.3s ease;
+  transition: var(--transition);
 }
 
 .product_detail_image:hover img {
   transform: scale(1.05);
+}
+
+/* --- Typography & Badges --- */
+.product_title {
+  font-size: 3rem;
+  color: var(--text-main);
+  font-family: "Baloo 2", cursive;
+  margin-bottom: 1rem;
 }
 
 .tag_badge {
@@ -41,14 +60,14 @@
   text-transform: uppercase;
 }
 
-.product_title {
-  font-size: 3rem;
-  color: #403937;
-  font-family: "Baloo 2", cursive, sans-serif;
-  margin-bottom: 1rem;
+.section_title {
+  font-family: "Baloo 2", cursive;
+  color: var(--text-main);
+  font-weight: 800;
+  margin-bottom: 20px;
 }
 
-/* --- Controls & Buttons --- */
+/* --- Controls & Interactive Elements --- */
 .counter_wrapper {
   background: #e6e5e5;
   padding: 8px 12px;
@@ -61,31 +80,37 @@
 .counter_wrapper button {
   border: none;
   background: none;
-  color: #8047f8;
+  color: var(--purple);
   transition: opacity 0.2s;
   cursor: pointer;
 }
 
-.add_btn {
-  background-color: #4b2995;
-  color: white;
+.add_btn,
+.submit_review_btn {
   border: none;
-  padding: 12px 24px;
   border-radius: 6px;
+  font-weight: 700;
+  transition: var(--transition);
+  cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-weight: 700;
-  transition: all 0.2s ease;
-  cursor: pointer;
+  color: white;
 }
 
-.add_btn:hover {
-  background-color: #8047f8;
+.add_btn {
+  background-color: var(--purple-dark);
+  padding: 12px 24px;
+}
+
+.add_btn:hover,
+.submit_review_btn:hover {
+  background-color: var(--purple);
   transform: translateY(-2px);
 }
 
-/* --- Tabs Styling --- */
+/* --- Tabs --- */
 .tab_link {
   background: none;
   border: none;
@@ -98,7 +123,7 @@
 }
 
 .tab_active {
-  color: #8047f8;
+  color: var(--purple);
 }
 
 .tab_active::after {
@@ -108,24 +133,11 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: #8047f8;
+  background: var(--purple);
   border-radius: 10px;
 }
 
-/* --- Description & Features --- */
-.section_title {
-  font-family: "Baloo 2", cursive;
-  color: #403937;
-  font-weight: 800;
-  margin-bottom: 20px;
-}
-
-.full_description {
-  color: #574f4d;
-  line-height: 1.8;
-  font-size: 1.05rem;
-}
-
+/* --- Features & Stats --- */
 .features_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -133,33 +145,27 @@
   margin-top: 25px;
 }
 
+.feature_item,
+.stat_card,
+.review_card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+}
+
 .feature_item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.9rem;
-  color: #574f4d;
-  font-weight: 600;
-  background: #ffffff;
   padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+  font-size: 0.9rem;
+  color: var(--text-support);
+  font-weight: 600;
 }
 
-.feature_dot {
-  width: 6px;
-  height: 6px;
-  background: #dbac2c;
-  border-radius: 50%;
-}
-
-/* --- Progress Bars & Stats --- */
 .stat_card {
-  background: white;
   padding: 25px;
-  border-radius: 16px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  border: 1px solid #f0f0f0;
 }
 
 .progress_bg {
@@ -172,66 +178,37 @@
 
 .progress_bar {
   height: 100%;
-  background: linear-gradient(90deg, #dbac2c, #f1e9c9);
+  background: linear-gradient(90deg, var(--yellow), #f1e9c9);
   border-radius: 10px;
   transition: width 1s ease-in-out;
 }
 
-/* --- Reviews Section --- */
-.reviews_list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
-}
-
+/* --- Reviews & Modals --- */
 .review_card {
-  background: white;
   padding: 25px;
-  border-radius: 16px;
-  border: 1px solid #f0f0f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-  transition: all 0.3s ease;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
 .review_card:hover {
   transform: translateY(-5px);
-  border-color: #8047f8;
+  border-color: var(--purple);
   box-shadow: 0 8px 20px rgba(128, 71, 248, 0.1);
 }
 
-.reviewer_name {
-  font-weight: 700;
-  color: #403937;
-  font-size: 1rem;
+.review_input,
+.review_textarea,
+.review_select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ededed;
+  border-radius: 12px;
+  background: #fafafa;
+  outline: none;
 }
 
-.review_comment {
-  font-size: 0.9rem;
-  color: #574f4d;
-  font-style: italic;
-  margin-top: 15px;
-  line-height: 1.6;
-  border-left: 3px solid #f3f2f2;
-  padding-left: 10px;
-}
-
-.write_review_btn {
-  border: 1px solid #8047f8;
-  background: transparent;
-  color: #8047f8;
-  padding: 8px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-.write_review_btn:hover {
-  background: #8047f8;
-  color: white;
-}
-
-/* --- Modal Styling --- */
 .modal_overlay {
   position: fixed;
   inset: 0;
@@ -246,54 +223,23 @@
 
 .modal_box {
   background: white;
-  padding: 40px;
+  padding: 25px;
   border-radius: 30px;
   width: 90%;
   max-width: 450px;
   position: relative;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-}
-
-.close_modal {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #8d8686;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.review_input,
-.review_textarea,
-.review_select {
-  width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 20px;
-  border: 1px solid #ededed;
-  border-radius: 12px;
-  background: #fafafa;
-  outline: none;
-  font-size: 0.95rem;
 }
 
 .submit_review_btn {
-  background: #8047f8;
-  color: white;
-  border: none;
+  background: var(--purple);
   padding: 14px;
   width: 100%;
-  border-radius: 12px;
-  font-weight: 700;
   text-transform: uppercase;
-  transition: all 0.3s ease;
-  cursor: pointer;
 }
 
-.submit_review_btn:hover {
-  background: #4b2995;
-  transform: translateY(-2px);
+/* --- Swiper & Animations --- */
+.mySwiper :global(.swiper-pagination-bullet-active) {
+  background: var(--purple) !important;
 }
 
 @keyframes fadeIn {
@@ -304,21 +250,89 @@
     opacity: 1;
   }
 }
-.slider_container {
-  padding: 10px 5px;
+/* --- Review Buttons --- */
+/* .write_review_btn {
+  background: transparent;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-/* Swiper pagination dots ka color change karne ke liye */
-.mySwiper :global(.swiper-pagination-bullet-active) {
-  background: #8047f8 !important;
+.write_review_btn:hover {
+  background: var(--purple);
+  color: white;
+} */
+
+/* Submission button (Modal ke andar wala) */
+.submit_review_btn {
+  background: var(--purple);
+  padding: 14px;
+  width: 100%;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  color: white;
+  transition: var(--transition);
+  cursor: pointer;
 }
 
-.mySwiper :global(.swiper-pagination-bullet) {
-  margin: 0 5px !important;
+.submit_review_btn:hover {
+  background: var(--purple-dark);
+  transform: translateY(-2px);
+}
+.write_review_btn {
+  position: relative;
+  background: transparent;
+  color: var(--purple);
+  padding: 8px 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 4px; /* Border radius ab kaam karega */
+  overflow: hidden;
+  transition: color 0.3s ease;
+  z-index: 1;
 }
 
-/* Swiper slide ki height fix karne ke liye taake cards barabar lagein */
-.mySwiper :global(.swiper-slide) {
-  display: flex;
-  height: auto;
+/* Gradient Layer (Border aur Background dono ke liye) */
+.write_review_btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* Border ki thickness */
+  background: linear-gradient(
+    180deg,
+    var(--yellow-dark) 0%,
+    var(--purple-dark) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+/* Hover State */
+.write_review_btn:hover {
+  color: white;
+}
+
+.write_review_btn:hover::before {
+  -webkit-mask: none; /* Mask hata kar pura gradient fill kar dena */
+  mask: none;
+  padding: 0;
+}
+.close_modal {
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
